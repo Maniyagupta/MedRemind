@@ -25,7 +25,7 @@ const medicationLogSchema = new mongoose.Schema(
         },
         status: {
             type: String,
-            enum: ["taken", "missed", "skipped"],
+            enum: ["taken", "missed", "skipped", "pending"],
             required: true,
         },
         // When the patient actually recorded/actioned it.
@@ -41,6 +41,6 @@ const medicationLogSchema = new mongoose.Schema(
 
 medicationLogSchema.index({ patientId: 1, scheduledFor: -1 });
 medicationLogSchema.index({ medicineId: 1, scheduledFor: -1 });
-
+   medicationLogSchema.index({ reminderId: 1, scheduledFor: 1 }, { unique: true, partialFilterExpression: { reminderId: { $type: "objectId" } } });
 const MedicationLog = mongoose.model("MedicationLog", medicationLogSchema);
 export default MedicationLog;
