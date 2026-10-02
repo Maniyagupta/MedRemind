@@ -109,6 +109,10 @@ const patientSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        timezone: {
+            type: String,
+            default: "Europe/Paris",
+        },
     },
     {
         timestamps: true,

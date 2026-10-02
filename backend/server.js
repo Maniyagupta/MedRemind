@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import connectDB from './config/db.js';
+import { tick } from './modules/scheduler/scheduler.service.js';
 import app from './app.js';
 
 const port = process.env.PORT || 5000;
@@ -15,6 +16,9 @@ async function startServer() {
 
 	app.listen(port, () => {
 		console.log(`MedRemind backend running on port ${port}`);
+		setInterval(() => {
+   		tick().catch((err) => console.error('Scheduler tick failed:', err.message));
+   	}, 60 * 1000);
 	});
 }
 

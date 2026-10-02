@@ -24,3 +24,9 @@
 - Where: after the spec was published as issue #1, before cutting tickets.
 - Chose: /clear.
 - Why (ruled out in order): continue would carry a session full of rejected drafts into ticket-writing. Clear was safe because everything the next phase needs (issue #1, CONTEXT.md, docs/adr/) was already written down. Handoff, subagent and compact were not needed.
+
+## What the tickets were missing (Lab 1, step 4), add:
+- #2: didn't say "dose_due" is not an allowed notification type, or that notifications go to Patient.userId, not patientId. Fixed in the ticke
+
+
+   - The school model (gemma4:26b) could not copy or write scheduler.service.js correctly (stubs, TODOs, garbled names), so I wrote that file, server.js and the test by hand from the ticket. The tests pass, 3/3.
