@@ -65,3 +65,12 @@ Round 3
 ❓ Q10 - Handling the "Auto-Missed" Doctor Notification: You want the connected doctor notified when a dose is auto-missed. Should this notification also follow the "In-app only" rule from Q4, or should it be more prominent (e.g., an email)?
 
 ➡️ Recommended: In-app only. To maintain consistency with the decision in Q4 and avoid overwhelming doctors, I recommend keeping this alert within the app's notification system.
+
+
+## Context decision (spec → tickets boundary)
+- Where: after the spec was published as issue #1, before cutting tickets.
+- Chose: /clear.
+- Why: continuing would carry a session full of rejected drafts into ticket-writing. Clear was safe because everything the next phase needs (issue #1, CONTEXT.md, docs/adr/) was already written down; nothing lived only in the chat. Handoff, subagent and compact were not needed.
+
+
+Check that NOTES.md has the edge audit line ("email blocked by in-app notification was a preference, removed") and the context decision (clear at spec → tickets). Add them if they're missing, and save. Then:
